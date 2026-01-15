@@ -36,8 +36,8 @@ As such, those are in use within the default layer at this time.*/
 &kp GRAVE  &kp N1  &kp N2  &kp N3    &kp N4     &kp N5                          &kp N6  &kp N7     &kp N8     &kp N9      &kp N0     &kp DEL
 &kp TAB    &kp Q   &kp W   &kp E     &kp R      &kp T                           &kp Y   &kp U      &kp I      &kp O       &kp P      &kp BSPC
 &kp LCTRL  &kp A   &kp S   &kp D     &kp F      &kp G                           &kp H   &kp J      &kp K      &kp L       &kp SEMI   &kp SQT
-&kp LSHFT  &kp Z   &kp X   &kp C     &kp V      &kp B   &to 0        &to 4      &kp N   &kp M      &kp COMMA  &kp PERIOD  &kp SLASH  &kp RET
-&mo 1      &to 2   &to 3   &kp LGUI  &kp LANG2  &mo 1   &kp SPACE    &kp SPACE  &mo 2   &kp LANG1  &kp LEFT   &kp DOWN    &kp UP     &kp RIGHT
+&kp LSHFT  &kp Z   &kp X   &kp C     &kp V      &kp B   &trans       &to 4      &kp N   &kp M      &kp COMMA  &kp PERIOD  &kp SLASH  &kp RET
+&to 1      &to 2   &to 3   &kp LGUI  &kp LANG2  &mo 1   &kp SPACE    &kp SPACE  &mo 2   &kp LANG1  &kp LEFT   &kp DOWN    &kp UP     &kp RIGHT
             >;
         };
 
@@ -96,9 +96,9 @@ As such, those are in use within the default layer at this time.*/
             bindings = <
 &kp GRAVE         &kp N1          &kp N2  &kp N3    &kp N4        &kp N5                              &kp N6  &kp N7  &kp N8     &kp N9      &kp N0            &kp MINUS
 &trans            &kp TAB         &kp L   &kp D     &kp C         &kp V                               &kp J   &kp F   &kp O      &kp U       &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&trans            &kp B           &kp R   &kp T     &kp S         &kp G                               &kp Y   &kp H   &kp A      &kp E       &kp SEMICOLON     &kp BACKSPACE
-&kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp Q   &kp M     &kp W         &kp Z      &to 0         &to 4      &kp K   &kp P   &kp COMMA  &kp PERIOD  &kp I             &kp ENTER
-&trans            &kp Z           &trans  &kp LGUI  &kp LEFT_ALT  &kp SPACE  &kp ESCAPE    &kp ENTER  &kp N   &mo 5   &kp SQT    &kp EQUAL   &kp SLASH         &kp BACKSLASH
+&trans            &kp B           &kp R   &kp T     &kp S         &kp G                               &kp Y   &kp H   &kp A      &kp E       &kp SEMICOLON     &kp EQUAL
+&kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp Q   &kp M     &kp W         &kp Z      &kp J         &to 0      &kp K   &kp P   &kp COMMA  &kp PERIOD  &kp I             &kp BACKSPACE
+&trans            &kp X           &trans  &kp LGUI  &kp LEFT_ALT  &kp SPACE  &kp ESCAPE    &kp ENTER  &kp N   &mo 5   &trans     &kp SQT     &kp SLASH         &kp BACKSLASH
             >;
         };
 
