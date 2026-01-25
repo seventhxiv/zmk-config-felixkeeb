@@ -5,11 +5,7 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/rgb.h>
 
 #define DEFAULT 0
 #define LOWER  1
@@ -24,7 +20,17 @@ As such, those are in use within the default layer at this time.*/
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        gallium {
+            bindings = <
+&kp GRAVE         &kp N1          &kp N2  &kp N3    &kp N4        &kp N5                              &kp N6  &kp N7  &kp N8     &kp N9      &kp N0            &kp MINUS
+&trans            &kp TAB         &kp L   &kp D     &kp C         &kp V                               &kp J   &kp F   &kp O      &kp U       &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&trans            &kp B           &kp R   &kp T     &kp S         &kp G                               &kp Y   &kp H   &kp A      &kp E       &kp SEMICOLON     &kp EQUAL
+&kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp Q   &kp M     &kp W         &kp Z      &kp J         &trans     &kp K   &kp P   &kp COMMA  &kp PERIOD  &kp I             &kp BACKSPACE
+&to 1             &kp X           &trans  &kp LGUI  &kp LEFT_ALT  &kp SPACE  &kp ESCAPE    &kp ENTER  &kp N   &mo 3   &trans     &kp SQT     &kp SLASH         &kp BACKSLASH
+            >;
+        };
+
+        WASD {
             // ---------------------------------------------------------------------------------------------------------------------------------
             // | GRAVE  |   1    |   2    |   3    |   4    |   5    |                                      |   6    |   7    |   8    |   9    |   0    |  DEL   |
             // |  TAB   |   Q    |   W    |   E    |   R    |   T    |                                      |   Y    |   U    |   I    |   O    |   P    |  BSPC  |
@@ -33,72 +39,11 @@ As such, those are in use within the default layer at this time.*/
             // | ADJUST |  ESC   |  ALT   |  LGUI  | EISUU  | LOWER  | SPACE  |                    |  SPACE | RAISE  |  KANA  |  LEFT  |  DOWN  |  UP    |  RIGHT |
 
             bindings = <
-&kp GRAVE         &kp N1          &kp N2  &kp N3    &kp N4        &kp N5                              &kp N6  &kp N7  &kp N8     &kp N9      &kp N0     &kp DEL
-&trans            &kp TAB         &kp Q   &kp W     &kp E         &kp R                               &kp Y   &kp U   &kp I      &kp O       &kp P      &kp BSPC
-&trans            &kp A           &kp A   &kp S     &kp D         &kp F                               &kp H   &kp J   &kp K      &kp L       &kp SEMI   &kp SQT
-&kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans  &kp Z     &kp X         &kp C      &kp V         &to 4      &kp N   &kp M   &kp COMMA  &kp PERIOD  &kp SLASH  &kp RET
-&to 1             &to 2           &to 3   &kp LGUI  &kp LEFT_ALT  &kp SPACE  &kp ESCAPE    &kp SPACE  &mo 2   &mo 5   &kp LEFT   &kp DOWN    &kp UP     &kp RIGHT
-            >;
-        };
-
-        lower_layer {
-            // ---------------------------------------------------------------------------------------------------------------------------------
-            // |      |      |      |      |      |      |                                  |      |      |      |      |      |      |
-            // |  ~   |  !   |  @   |  #   |  $   |  %   |                                  |  ^   |  &   |  *   |  (   |  )   |      |
-            // |      |      |      |      |      |      |                                  |      |  _   |  +   |  {   |  }   | PIPE |
-            // |      |      |      |      |      |      |  (   |                    |  )   |      |      |      | HOME | END  |      |
-            // |      |      |      |      |      |      |      |                    |      |      |      |      |      |      |      |
-
-            bindings = <
-&trans     &trans    &trans  &trans    &trans    &trans                           &trans     &trans     &trans     &trans    &trans    &trans
-&kp TILDE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT                        &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &trans
-&trans     &trans    &trans  &trans    &trans    &trans                           &trans     &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE
-&trans     &trans    &trans  &trans    &trans    &trans     &kp LPAR    &kp RPAR  &trans     &trans     &trans     &kp HOME  &kp END   &trans
-&trans     &trans    &trans  &trans    &trans    &trans     &trans      &trans    &trans     &trans     &trans     &trans    &trans    &trans
-            >;
-        };
-
-        raise_layer {
-            // ---------------------------------------------------------------------------------------------------------------------------------
-            // |       |       |       |       |       |       |                                    |       |       |       |       |       |       |
-            // |   `   |   1   |   2   |   3   |   4   |   5   |                                    |   6   |   7   |   8   |   9   |   0   |  DEL  |
-            // |       |  F1   |  F2   |  F3   |  F4   |  F5   |                                    |  F6   |   -   |   =   |   [   |   ]   |   \   |
-            // |       |  F7   |  F8   |  F9   |  F10  |  F11  |       |                    |       |  F12  |       | PSCRN | PG_DN | PG_UP |       |
-            // |       |       |       |       |       |       |       |                    |       |       |       | NEXT  | VOL-  | VOL+  | PLAY  |
-
-            bindings = <
-&trans     &trans  &trans  &trans  &trans   &trans                     &trans   &trans     &trans      &trans        &trans        &trans
-&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5                     &kp N6   &kp N7     &kp N8      &kp N9        &kp N0        &kp DEL
-&trans     &kp F1  &kp F2  &kp F3  &kp F4   &kp F5                     &kp F6   &kp MINUS  &kp EQUAL   &kp LBKT      &kp RBKT      &kp BSLH
-&trans     &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &trans    &trans  &kp F12  &trans     &kp PSCRN   &kp PG_DN     &kp PG_UP     &trans
-&trans     &trans  &trans  &trans  &trans   &trans   &trans    &trans  &trans   &trans     &kp C_NEXT  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP
-            >;
-        };
-
-        adjust_layer {
-            // ---------------------------------------------------------------------------------------------------------------------------------
-            // |    `     |    !     |    @     |    #     |    $     |    %     |                                          |    ^     |    &     |    *     |    (     |    )     |  EP TOG  |
-            // |  BT CLR  | BT SEL0  | BT SEL1  | BT SEL2  | BGT SEL3 | BT SEL4  |                                          | RGB EFF+ | RGB HUE+ | RGB SAT+ | RGB SPD+ | RGB BRI+ | RGB TOG  |
-            // |  BT NXT  | OUT TOG  | OUT USB  | OUT BLE  |          |          |                                          | RGB EFF- | RGB HUE- | RGB SAT- | RGB SPD- | RGB BRI- |          |
-            // |  BT PRV  |          |          |          |          |          |    {     |                    |    }     |          |          |          |          |          |          |
-            // |          |          |          |          |          |          |          |                    |          |          |          |          |          |          |          |
-
-            bindings = <
-&kp GRAVE   &kp EXCL      &kp AT        &kp HASH      &kp DLLR      &kp PRCNT                           &kp CARET        &kp AMPS         &kp ASTRK        &kp LPAR         &kp RPAR         &ext_power EP_TOG
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                        &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG
-&bt BT_NXT  &out OUT_TOG  &out OUT_USB  &out OUT_BLE  &trans        &trans                              &rgb_ug RGB_EFR  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_SPD  &rgb_ug RGB_BRD  &trans
-&bt BT_PRV  &trans        &trans        &trans        &trans        &trans        &kp LBRC    &kp RBRC  &trans           &trans           &trans           &trans           &trans           &trans
-&trans      &trans        &trans        &trans        &trans        &trans        &trans      &trans    &trans           &trans           &trans           &trans           &trans           &trans
-            >;
-        };
-
-        gallium {
-            bindings = <
-&kp GRAVE         &kp N1          &kp N2  &kp N3    &kp N4        &kp N5                              &kp N6  &kp N7  &kp N8     &kp N9      &kp N0            &kp MINUS
-&trans            &kp TAB         &kp L   &kp D     &kp C         &kp V                               &kp J   &kp F   &kp O      &kp U       &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&trans            &kp B           &kp R   &kp T     &kp S         &kp G                               &kp Y   &kp H   &kp A      &kp E       &kp SEMICOLON     &kp EQUAL
-&kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp Q   &kp M     &kp W         &kp Z      &kp J         &to 0      &kp K   &kp P   &kp COMMA  &kp PERIOD  &kp I             &kp BACKSPACE
-&trans            &kp X           &trans  &kp LGUI  &kp LEFT_ALT  &kp SPACE  &kp ESCAPE    &kp ENTER  &kp N   &mo 5   &trans     &kp SQT     &kp SLASH         &kp BACKSLASH
+&trans  &trans   &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp TAB  &kp Q   &kp W   &kp E   &kp R                     &kp T   &kp Y   &kp U   &kp I   &kp O   &trans
+&trans  &trans   &kp A   &kp S   &kp D   &kp F                     &kp G   &kp H   &kp J   &kp K   &trans  &trans
+&trans  &trans   &trans  &kp Z   &kp X   &kp C   &kp V     &trans  &kp B   &kp N   &kp M   &trans  &trans  &trans
+&to 0   &trans   &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
