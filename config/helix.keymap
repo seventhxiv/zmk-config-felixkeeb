@@ -24,9 +24,9 @@ As such, those are in use within the default layer at this time.*/
             bindings = <
 &kp GRAVE         &kp N1          &kp N2  &kp N3    &kp N4        &kp N5                              &kp N6  &kp N7  &kp N8     &kp N9      &kp N0            &kp MINUS
 &trans            &kp TAB         &kp L   &kp D     &kp C         &kp V                               &kp J   &kp F   &kp O      &kp U       &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&trans            &kp B           &kp R   &kp T     &kp S         &kp G                               &kp Y   &kp H   &kp A      &kp E       &kp SEMICOLON     &kp EQUAL
-&kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp Q   &kp M     &kp W         &kp Z      &kp J         &trans     &kp K   &kp P   &kp COMMA  &kp PERIOD  &kp I             &kp BACKSPACE
-&to 1             &kp X           &trans  &kp LGUI  &kp LEFT_ALT  &kp SPACE  &kp ESCAPE    &kp ENTER  &kp N   &mo 3   &trans     &kp SQT     &kp SLASH         &kp BACKSLASH
+&trans            &kp B           &kp R   &kp T     &kp S         &kp G                               &kp Y   &kp H   &kp A      &kp E       &kp SEMICOLON     &kp BACKSPACE
+&kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp Q   &kp M     &kp W         &kp Z      &kp J         &trans     &kp K   &kp P   &kp COMMA  &kp PERIOD  &kp I             &kp EQUAL
+&to 1             &kp X           &trans  &kp LGUI  &kp LEFT_ALT  &kp SPACE  &kp ESCAPE    &kp ENTER  &kp N   &mo 2   &trans     &kp SQT     &kp SLASH         &kp BACKSLASH
             >;
         };
 
